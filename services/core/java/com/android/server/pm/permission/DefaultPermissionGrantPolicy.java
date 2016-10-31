@@ -791,12 +791,14 @@ public final class DefaultPermissionGrantPolicy {
         grantSystemFixedPermissionsToSystemPackage("com.google.android.apps.tycho", userId, CONTACTS_PERMISSIONS,
                 PHONE_PERMISSIONS, MICROPHONE_PERMISSIONS, ALWAYS_LOCATION_PERMISSIONS, SMS_PERMISSIONS);
 
-
         // ContactsProvider2
         grantSystemFixedPermissionsToSystemPackage(
                 getDefaultProviderAuthorityPackage("com.android.providers.contacts.ContactsProvider2", userId), userId,
                 CONTACTS_PERMISSIONS, STORAGE_PERMISSIONS);
 
+        // Google Calendar
+        grantSystemFixedPermissionsToSystemPackage("com.google.android.calendar", userId, CALENDAR_PERMISSIONS,
+                CONTACTS_PERMISSIONS, PHONE_PERMISSIONS);
     }
 
     private String getDefaultSystemHandlerActivityPackageForCategory(String category, int userId) {
